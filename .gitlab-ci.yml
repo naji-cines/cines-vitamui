@@ -1,0 +1,23 @@
+variables:
+  GIT_SSL_NO_VERIFY: "true"
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+  MAVEN_OPTS: "-Dmaven.repo.local=./.m2/repository"
+
+stages:
+  - build_vitamui
+
+.machine: &runner-dev
+    tags:
+        - vitamui, docker
+build_api:dev:
+  image: maven:3.6.3-jdk-11
+#  image: adoptopenjdk/maven-openjdk11
+  stage: build_vitamui
+  only:
+    - feat/test-integration
+  <<: *runner-dev
+  script:
+#    - mvn clean install -Pprod
+    - mvn clean install -DskipTests
+  dependencies: []
