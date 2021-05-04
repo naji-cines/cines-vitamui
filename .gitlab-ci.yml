@@ -6,18 +6,48 @@ variables:
 
 stages:
   - build_vitamui
+  # - start_mongo
+  # - build_services
+  # - deploy_services
 
 .machine: &runner-dev
     tags:
         - vitamui, docker
-build_api:dev:
+
+# .machine: &runner-shell
+#     tags:
+#         - pastis, shell
+build_project:dev:
   image: maven:3.6.3-jdk-11
-#  image: adoptopenjdk/maven-openjdk11
   stage: build_vitamui
   only:
     - feat/test-integration
   <<: *runner-dev
   script:
-#    - mvn clean install -Pprod
     - mvn clean install -DskipTests
   dependencies: []
+
+# start_mongo:dev:
+#   stage: start_mongo
+#   only:
+#     - feat/test-integration
+#   <<: *runner-shell
+#   script:
+#     - sh tools/docker/mongo/restart_dev.sh
+
+# build_services:dev:
+#   stage: build_services
+#   only:
+#     - feat/test-integration
+#   <<: *runner-shell
+#   script:
+#     - docker build -f Dockerfile .
+
+
+# deploy_services:dev:
+#   stage: deploy_services
+#   only:
+#     - feat/test-integration
+#   <<: *runner-shell
+#   script:
+#     - use docker compose to expose services

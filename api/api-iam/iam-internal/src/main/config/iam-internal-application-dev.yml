@@ -62,7 +62,7 @@ logbook:
 
 vitam.tenant.init.mandatory: true
 
-customer.init.config.file: src/main/config/customer-init.yml
+customer.init.config.file: customer-init.yml
 
 # Jaeger
 opentracing:
