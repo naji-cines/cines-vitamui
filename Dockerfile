@@ -54,7 +54,7 @@ COPY ui/ui-commons/target /app/ui/ui-commons/target
 COPY ui/ui-commons/pom.xml /app/ui/ui-commons/pom.xml
 
 FROM cines/vitamui-security-internal AS security-internal
-COPY --from=dependency /app/commons/commons-rest /app/commons/commons-rest
+COPY --from=dependencies /app/commons/commons-rest /app/commons/commons-rest
 COPY --from=dependencies /app/commons/commons-api /app/commons/commons-api
 COPY --from=dependencies /app/api/api-security/security-commons /app/api/api-security/security-commons
 COPY --from=dependencies /app/commons/commons-mongo /app/commons/commons-mongo
