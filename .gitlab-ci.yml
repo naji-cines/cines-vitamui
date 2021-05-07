@@ -7,24 +7,23 @@ variables:
 stages:
   - build_vitamui
   # - start_mongo
-  # - build_services
+  # - create_network
   # - deploy_services
 
 .machine: &runner-dev
     tags:
         - vitamui, docker
 
-# .machine: &runner-shell
-#     tags:
-#         - pastis, shell
+.machine: &runner-shell
+    tags:
+        - pastis, shell
 build_project:dev:
-  image: maven:3.6.3-jdk-11
   stage: build_vitamui
   only:
     - feat/test-integration
-  <<: *runner-dev
+  <<: *runner-shell
   script:
-    - mvn clean install -DskipTests
+    - docker build --cache-from none -f Dockerfile .
   dependencies: []
 
 # start_mongo:dev:
@@ -33,16 +32,18 @@ build_project:dev:
 #     - feat/test-integration
 #   <<: *runner-shell
 #   script:
-#     - sh tools/docker/mongo/restart_dev.sh
+#     - cd tools/docker/mongo/
+#     - sh restart_dev.sh
 
-# build_services:dev:
-#   stage: build_services
+# create_network:dev:
+#   stage: create_network
 #   only:
 #     - feat/test-integration
 #   <<: *runner-shell
+#   create network vitamui and connect mongodb to it
 #   script:
-#     - docker build -f Dockerfile .
-
+#     - docker network create vitamui
+#     - docker network connect vitamui vitamui-mongo
 
 # deploy_services:dev:
 #   stage: deploy_services
@@ -51,3 +52,5 @@ build_project:dev:
 #   <<: *runner-shell
 #   script:
 #     - use docker compose to expose services
+#     - sh tag-images.sh
+#     - sh run-images.sh

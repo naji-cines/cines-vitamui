@@ -1,5 +1,5 @@
 server:
-  host: sandbox23-adm.cines.fr
+  host: sandbox23.cines.fr
   port: 8051
   scheme: https
   ssl:
@@ -16,4 +16,4 @@ logging:
 management.endpoints.web.exposure.include: "*"
 # Uncomment if you want to use you specific logback config.
 #logging:
-config: ui/ui/pastis/src/main/config/logback.xml
+config: ui/ui-pastis/src/main/config/logback.xml
