@@ -16,7 +16,7 @@ stages:
 
 .machine: &runner-shell
     tags:
-        - pastis, shell
+        - vitamui, shell
 build_project:dev:
   stage: build_vitamui
   only:
