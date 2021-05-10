@@ -2,9 +2,10 @@
   position: fixed;
   width: 450px;
   top: 70px;
-  height: 160px;
+  height: 150px;
   display: block;
-  background-color: red;
+  background-color: #FFFFFF;
+  border-bottom: solid var(--vitamui-grey-200);
 }
 .mat-table{
   position: fixed;
@@ -15,7 +16,7 @@
 .pastis-edit-profile-header-name{
   position: relative;
   left: 40px;
-  top: 30px;
+  top: 20px;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
@@ -28,7 +29,7 @@
 .pastis-edit-profile-header-id{
     position: relative;
     left: 40px;
-    top: 16px;
+    top: 10px;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -108,6 +109,7 @@
 ::ng-deep .mat-tab-label-active{
     text-shadow: 0.5px 0  #5E5D5D;
     background: #FFFFFF !important;
+    border-bottom: solid var(--vitamui-primary);
 }
 
 // The tab content
@@ -115,7 +117,7 @@
     margin: 8px;
     display: flex;
     align-items: center;
-    color: var(--vitamui-grey-400) ;
+    color: var(--vitamui-grey-400);
 }
 
 
@@ -133,6 +135,7 @@
 
 ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar .pastis-ink-bar{
     height: 0px;
+
   }
 
 .mat-tab-group {
@@ -142,7 +145,6 @@
 .mat-tab-body .mat-tab-body-active {
     overflow-x: auto !important;
     overflow-y: auto !important;
-    border-bottom: solid var(--vitamui-primary);
 }
 
 .mat-tab-body-content {
