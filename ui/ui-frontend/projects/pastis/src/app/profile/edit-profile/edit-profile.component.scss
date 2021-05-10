@@ -1,19 +1,21 @@
 .pastis-edit-profile-header{
   position: fixed;
-  top: 20px;
+  width: 450px;
+  top: 70px;
+  height: 160px;
+  display: block;
+  background-color: red;
 }
 .mat-table{
   position: fixed;
   top: 220px;
   height: 400px;
-  width: 400px;
+  width: 450px;
 }
 .pastis-edit-profile-header-name{
-  position: absolute;
-  width: 350px;
-  height: 29px;
+  position: relative;
   left: 40px;
-  top: 70px;
+  top: 30px;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
@@ -24,12 +26,9 @@
 }
 
 .pastis-edit-profile-header-id{
-    position: absolute;
-    width: 350px;
-    height: 17px;
+    position: relative;
     left: 40px;
-    top: 110px;
-
+    top: 16px;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -116,7 +115,7 @@
     margin: 8px;
     display: flex;
     align-items: center;
-    color: #FFFFFF ;
+    color: var(--vitamui-grey-400) ;
 }
 
 
@@ -143,6 +142,7 @@
 .mat-tab-body .mat-tab-body-active {
     overflow-x: auto !important;
     overflow-y: auto !important;
+    border-bottom: solid var(--vitamui-primary);
 }
 
 .mat-tab-body-content {
