@@ -4,7 +4,7 @@ COPY . /app
 WORKDIR /app
 RUN mvn clean install -DskipTests
 WORKDIR /app/ui/ui-pastis
-RUN cd ui/ui-pastis && mvn clean install -Pdev
+RUN mvn clean install -Pdev
 
 FROM node:12.16.1 as build-front
 LABEL name=build-front
