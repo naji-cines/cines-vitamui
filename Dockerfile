@@ -1,8 +1,9 @@
-
 FROM maven:3.6.3-jdk-11 as build-services
 LABEL name=build-services
 COPY . /app
-RUN cd /app && mvn clean install -DskipTests
+WORKDIR /app
+RUN mvn clean install -DskipTests
+WORKDIR /app/ui/ui-pastis
 RUN cd ui/ui-pastis && mvn clean install -Pdev
 
 FROM node:12.16.1 as build-front
