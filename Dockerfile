@@ -10,7 +10,9 @@ FROM node:12.16.1 as build-front
 LABEL name=build-front
 COPY --from=build-services /app /app
 WORKDIR /app/ui/ui-frontend
-RUN npm run build:identity && npm run build:portal && npm run buid:pastis
+RUN npm run build:identity
+RUN npm run build:portal
+RUN npm run buid:pastis
 WORKDIR /app/ui/ui-frontend-common
 RUN npm run build:prod
 
@@ -33,47 +35,47 @@ COPY --from=build-front /app/api/api-iam/iam-external/src/main/config /app/api/a
 COPY --from=build-front /app/api/api-iam/iam-external/pom.xml /app/api/api-iam/iam-external/pom.xml
 
 COPY --from=build-front /app/cas/cas-server/target /app/cas/cas-server/target
-COPY -from=build-front /app/cas/cas-server/src/main/config /app/cas/cas-server/src/main/config
-COPY -from=build-front /app/cas/cas-server/pom.xml /app/cas/cas-server/pom.xml
-COPY -from=build-front /app/cas/pom.xml /app/cas/pom.xml
+COPY --from=build-front /app/cas/cas-server/src/main/config /app/cas/cas-server/src/main/config
+COPY --from=build-front /app/cas/cas-server/pom.xml /app/cas/cas-server/pom.xml
+COPY --from=build-front /app/cas/pom.xml /app/cas/pom.xml
 
-COPY -from=build-front /app/ui/ui-portal/target /app/ui/ui-portal/target
-COPY -from=build-front /app/ui/ui-portal/src/main/config /app/ui/ui-portal/src/main/config
-COPY -from=build-front /app/ui/ui-portal/pom.xml /app/ui/ui-portal/pom.xml
-
-
-COPY -from=build-front /app/ui/ui-identity/target /app/ui/ui-identity/target
-COPY -from=build-front /app/ui/ui-identity/src/main/config /app/ui/ui-identity/src/main/config
-COPY -from=build-front /app/ui/ui-identity/pom.xml /app/ui/ui-identity/pom.xml
-
-COPY -from=build-front /app/ui/ui-pastis/target /app/ui/ui-pastis/target
-COPY -from=build-front /app/ui/ui-pastis/src/main/config /app/ui/ui-pastis/src/main/config
-COPY -from=build-front /app/ui/ui-pastis/pom.xml /app/ui/ui-pastis/pom.xml
-
-COPY -from=build-front /app/api/api-iam/iam-internal-client/target /app/api/api-iam/iam-internal-client/target
-COPY -from=build-front /app/api/api-iam/iam-internal-client/pom.xml /app/api/api-iam/iam-internal-client/pom.xml
-
-COPY -from=build-front /app/api/api-iam/iam-external-client/target /app/api/api-iam/iam-external-client/target
-COPY -from=build-front /app/api/api-iam/iam-external-client/pom.xml /app/api/api-iam/iam-external-client/pom.xml
-
-COPY -from=build-front /app/api/api-iam/iam-commons/target /app/api/api-iam/iam-commons/target
-COPY -from=build-front /app/api/api-iam/iam-commons/pom.xml /app/api/api-iam/iam-commons/pom.xml
-
-COPY -from=build-front /app/commons /app/commons
-COPY -from=build-front /app/api/api-iam/iam-commons /app/api/api-iam/iam-commons
-COPY -from=build-front /app/api/api-iam/iam-security /app/api/api-iam/iam-security
-COPY -from=build-front /app/api/api-security/security-client /app/api/api-security/security-client
-COPY -from=build-front /app/api/api-security/security-commons /app/api/api-security/security-commons
-
-COPY -from=build-front /app/ui/ui-frontend/target /app/ui/ui-frontend/target
-COPY -from=build-front /app/ui/ui-frontend/dist /app/ui/ui-frontend/dist
-COPY -from=build-front /app/ui/ui-frontend/pom.xml /app/ui/ui-frontend/pom.xml
-
-COPY -from=build-front /app/ui/ui-commons/target /app/ui/ui-commons/target
-COPY -from=build-front /app/ui/ui-commons/pom.xml /app/ui/ui-commons/pom.xml
+COPY --from=build-front /app/ui/ui-portal/target /app/ui/ui-portal/target
+COPY --from=build-front /app/ui/ui-portal/src/main/config /app/ui/ui-portal/src/main/config
+COPY --from=build-front /app/ui/ui-portal/pom.xml /app/ui/ui-portal/pom.xml
 
 
-COPY -from=build-front /app/ui/ui-frontend-common/dist/ /app/ui/ui-frontend-common/dist
+COPY --from=build-front /app/ui/ui-identity/target /app/ui/ui-identity/target
+COPY --from=build-front /app/ui/ui-identity/src/main/config /app/ui/ui-identity/src/main/config
+COPY --from=build-front /app/ui/ui-identity/pom.xml /app/ui/ui-identity/pom.xml
+
+COPY --from=build-front /app/ui/ui-pastis/target /app/ui/ui-pastis/target
+COPY --from=build-front /app/ui/ui-pastis/src/main/config /app/ui/ui-pastis/src/main/config
+COPY --from=build-front /app/ui/ui-pastis/pom.xml /app/ui/ui-pastis/pom.xml
+
+COPY --from=build-front /app/api/api-iam/iam-internal-client/target /app/api/api-iam/iam-internal-client/target
+COPY --from=build-front /app/api/api-iam/iam-internal-client/pom.xml /app/api/api-iam/iam-internal-client/pom.xml
+
+COPY --from=build-front /app/api/api-iam/iam-external-client/target /app/api/api-iam/iam-external-client/target
+COPY --from=build-front /app/api/api-iam/iam-external-client/pom.xml /app/api/api-iam/iam-external-client/pom.xml
+
+COPY --from=build-front /app/api/api-iam/iam-commons/target /app/api/api-iam/iam-commons/target
+COPY --from=build-front /app/api/api-iam/iam-commons/pom.xml /app/api/api-iam/iam-commons/pom.xml
+
+COPY --from=build-front /app/commons /app/commons
+COPY --from=build-front /app/api/api-iam/iam-commons /app/api/api-iam/iam-commons
+COPY --from=build-front /app/api/api-iam/iam-security /app/api/api-iam/iam-security
+COPY --from=build-front /app/api/api-security/security-client /app/api/api-security/security-client
+COPY --from=build-front /app/api/api-security/security-commons /app/api/api-security/security-commons
+
+COPY --from=build-front /app/ui/ui-frontend/target /app/ui/ui-frontend/target
+COPY --from=build-front /app/ui/ui-frontend/dist /app/ui/ui-frontend/dist
+COPY --from=build-front /app/ui/ui-frontend/pom.xml /app/ui/ui-frontend/pom.xml
+
+COPY --from=build-front /app/ui/ui-commons/target /app/ui/ui-commons/target
+COPY --from=build-front /app/ui/ui-commons/pom.xml /app/ui/ui-commons/pom.xml
+
+
+COPY --from=build-front /app/ui/ui-frontend-common/dist/ /app/ui/ui-frontend-common/dist
 
 FROM adoptopenjdk/openjdk11 AS security-internal
 LABEL name=security-internal
