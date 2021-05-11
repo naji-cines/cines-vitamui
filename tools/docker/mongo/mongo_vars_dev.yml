@@ -81,14 +81,16 @@ vitamui_platform_informations:
 vitam_site_name: "dev"
 vitamui:
   identity:
-    base_url: "https://sandbox23.cines.fr:4201"
+    base_url: "https://sandbox23-adm.cines.fr:4201"
   identity_admin:
-    base_url: "https://sandbox23.cines.fr:4201"
+    base_url: "https://sandbox23-adm.cines.fr:4201"
   portal:
-    base_url: "https://sandbox23.cines.fr:4200"
+    base_url: "https://sandbox23-adm.cines.fr:4200"
   referential:
-    base_url: "https://sandbox23.cines.fr:4202"
+    base_url: "https://sandbox23-adm.cines.fr:4202"
   ingest:
-    base_url: "https://sandbox23.cines.fr:4208"
+    base_url: "https://sandbox23-adm.cines.fr:4208"
   archive_search:
-    base_url: "https://sandbox23.cines.fr:4209"
+    base_url: "https://sandbox23-adm.cines.fr:4209"
+  pastis:
+    base_url: "https://sandbox23-adm.cines.fr:4251"
