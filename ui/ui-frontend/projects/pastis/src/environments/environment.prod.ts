@@ -1,5 +1,9 @@
 /*
+<<<<<<< HEAD
 Copyright  CINES - Centre Informatique National pour l'Enseignement Supérieur (2020)
+=======
+Copyright © CINES - Centre Informatique National pour l'Enseignement Supérieur (2020)
+>>>>>>> 9e74110... refactor: Configuration pour construire les fichier de production pastis
 
 [dad@cines.fr]
 
@@ -35,8 +39,15 @@ same conditions as regards security.
 The fact that you are presently reading this means that you have had
 knowledge of the CeCILL-C license and that you accept its terms.
 */
+<<<<<<< HEAD
 export const environment = {
   production: true,
+=======
+import { IEnvironment } from './IEnvironment';
+
+export const environment: IEnvironment = {
+  production: false,
+>>>>>>> 9e74110... refactor: Configuration pour construire les fichier de production pastis
   apiServerUrl: "https://sandbox23.cines.fr:8051",
 };
 

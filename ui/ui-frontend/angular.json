@@ -913,6 +913,7 @@
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
+              "aot": true,
               "buildOptimizer": true,
               "budgets": [
                 {
