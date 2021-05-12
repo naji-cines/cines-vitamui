@@ -6,9 +6,9 @@ variables:
 
 stages:
   - build_vitamui
-  # - start_mongo
-  # - create_network
-  # - deploy_services
+  - start_mongo
+  - create_network
+  - deploy_services
 
 .machine: &runner-dev
     tags:
@@ -26,31 +26,31 @@ build_project:dev:
     - docker build --cache-from none -f Dockerfile .
   dependencies: []
 
-# start_mongo:dev:
-#   stage: start_mongo
-#   only:
-#     - feat/test-integration
-#   <<: *runner-shell
-#   script:
-#     - cd tools/docker/mongo/
-#     - sh restart_dev.sh
+ start_mongo:dev:
+   stage: start_mongo
+   only:
+     - feat/test-integration
+   <<: *runner-shell
+   script:
+     - cd tools/docker/mongo/
+     - sh restart_dev.sh
 
-# create_network:dev:
-#   stage: create_network
-#   only:
-#     - feat/test-integration
-#   <<: *runner-shell
+ create_network:dev:
+   stage: create_network
+   only:
+     - feat/test-integration
+   <<: *runner-shell
 #   create network vitamui and connect mongodb to it
-#   script:
-#     - docker network create vitamui
-#     - docker network connect vitamui vitamui-mongo
+   script:
+     - docker network create vitamui
+     - docker network connect vitamui vitamui-mongo
 
-# deploy_services:dev:
-#   stage: deploy_services
-#   only:
-#     - feat/test-integration
-#   <<: *runner-shell
-#   script:
+ deploy_services:dev:
+   stage: deploy_services
+   only:
+     - feat/test-integration
+   <<: *runner-shell
+   script:
 #     - use docker compose to expose services
-#     - sh tag-images.sh
-#     - sh run-images.sh
+     - sh tag-images.sh
+     - sh run-images.sh
