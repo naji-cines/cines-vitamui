@@ -5,7 +5,7 @@
 
     <artifactId>ui-referential</artifactId>
     <packaging>jar</packaging>
-    <name>VITAMUI UI Referential</name>
+    <name>VITAMUI UI Referential rien</name>
 
     <parent>
         <groupId>fr.gouv.vitamui</groupId>
