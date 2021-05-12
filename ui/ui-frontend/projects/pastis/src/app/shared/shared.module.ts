@@ -47,6 +47,7 @@ import { PastisDialogConfirmComponent } from './pastis-dialog/pastis-dialog-conf
 import { PastisToggleButtonComponent } from './pastis-toggle-button/pastis-toggle-button.component';
 import { PastisNoticeToggleButtonComponent } from './pastis-notice-toggle-button/pastis-notice-toggle-button.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { PortalModule } from '@angular/cdk/portal';
 
 @NgModule({
   declarations: [
@@ -55,22 +56,27 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     PastisToggleButtonComponent,
     PastisNoticeToggleButtonComponent,
     PastisDialogConfirmComponent
+   
+    
   ],
   imports: [CommonModule,
     FormsModule,
     TooltipModule,
     PastisMaterialModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    PortalModule
+    
 
   ],
-  entryComponents: [PastisDialogConfirmComponent,PastisUnderConstructionComponent],
+  entryComponents: [PastisDialogConfirmComponent, PastisUnderConstructionComponent],
   exports: [
     PastisSpinnerComponent,
     PastisUnderConstructionComponent,
     TooltipModule,
     PastisMaterialModule,
     PastisToggleButtonComponent,
-    PastisNoticeToggleButtonComponent
+    PastisNoticeToggleButtonComponent,
+    PastisDialogConfirmComponent
   ],
 })
 export class SharedModule {}

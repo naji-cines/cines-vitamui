@@ -241,18 +241,18 @@ tr:hover .pastis-btn-appear {
   overflow-x: hidden;
   max-height: 425px;
   width: 60%;
-  left: 450px;
-  padding-top: 60px;
+  left: 475px;
+  margin-top: 60px;
   top: 0%;
   position: relative;
 }
 
 .button-container {
-  position: absolute;
-  width: 230px;
+  position: relative;
+  width: 270px;
   height: 50px;
-  left: 120px;
-  top: 745px;
+  left: 475px;
+  top: 50px;
 }
 
 
@@ -262,7 +262,7 @@ tr:hover .pastis-btn-appear {
   position: relative;
   width: 60%;
   top: 20px;
-  left: 450px;
+  left: 475px;
   height: 116px;
 }
 
@@ -401,3 +401,7 @@ dp-day-calendar .dp-day-calendar-container {
 .complex-element-no-child {
   text-align: left;
 }
+.mat-sidenav-content{
+  height: 800px;
+}
+

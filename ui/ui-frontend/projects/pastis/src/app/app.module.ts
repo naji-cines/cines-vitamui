@@ -59,7 +59,6 @@ import { AppRoutingModule,routingComponents } from './app-routing.module';
 
 // Components and services
 import { AppComponent } from './app.component';
-import { PastisDialogConfirmComponent } from './shared/pastis-dialog/pastis-dialog-confirm/pastis-dialog-confirm.component';
 import { UserActionAddMetadataComponent } from './user-actions/add-metadata/add-metadata.component';
 import { UserActionRemoveMetadataComponent } from './user-actions/remove-metadata/remove-metadata.component';
 import { ToastContainerModule, ToastrModule } from 'ngx-toastr';
@@ -88,7 +87,7 @@ export function httpLoaderFactory(httpClient: HttpClient): MultiTranslateHttpLoa
     UserActionRemoveMetadataComponent,
     routingComponents,
   ],
-  entryComponents:[PastisDialogConfirmComponent,UserActionAddMetadataComponent,UserActionRemoveMetadataComponent],
+  entryComponents:[UserActionAddMetadataComponent,UserActionRemoveMetadataComponent],
   imports: [
     HttpClientModule,
     BrowserModule,
