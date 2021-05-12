@@ -236,7 +236,7 @@ api/api-archive-search/archive-search-internal/src/main/config/dev-vitam/*
 api/api-ingest/ingest-internal/src/main/config/dev-vitam/*
 api/api-referential/referential-internal/src/main/config/dev-vitam/*
 api/api-ingest/ingest-internal/src/main/config/dev-vitam/*
-api/api-iam/iam-internal/src/main/config/dev-vitam/*
+#api/api-iam/iam-internal/src/main/config/dev-vitam/*
 
 ##########################################
 # Mongo workspace entry-point #
