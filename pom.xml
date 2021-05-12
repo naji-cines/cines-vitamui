@@ -52,7 +52,6 @@
             </url>
         </repository>
     </repositories>
-
     <distributionManagement>
         <!-- <id>vitam</id> to be defined in Profiles -->
     </distributionManagement>
