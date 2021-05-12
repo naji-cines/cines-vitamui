@@ -1,5 +1,4 @@
 api/api-ingest/ingest-internal/pom.xml merge=ours
-.gitattributes merge=ours
 .gitlab-ci.yml merge=ours
 pom.xml merge=ours
 ui/ui-frontend/proxy.conf.json merge=ours
