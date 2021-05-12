@@ -49,6 +49,8 @@
             <id>vitamui-maven</id>
             <url>
                 http://download.programmevitam.fr/vitam_repository/4.0.0/mvn_repo/
+
+
             </url>
         </repository>
     </repositories>
