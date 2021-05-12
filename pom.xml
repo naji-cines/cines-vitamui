@@ -47,7 +47,7 @@
     </repositories>
 
     <distributionManagement>
-        <!-- <id>vitam</id> to be defined in Profiles -->
+        <!-- <id>vitam</id> to be defined MASTER2 TESTiin Profiles -->
     </distributionManagement>
 
     <!-- Définition de l'url de l'intégration continue du projet -->
