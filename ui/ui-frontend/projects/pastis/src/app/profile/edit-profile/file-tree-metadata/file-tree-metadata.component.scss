@@ -242,17 +242,17 @@ tr:hover .pastis-btn-appear {
   max-height: 425px;
   width: 60%;
   left: 475px;
-  padding-top: 60px;
+  margin-top: 60px;
   top: 0%;
   position: relative;
 }
 
 .button-container {
-  position: absolute;
-  width: 230px;
+  position: relative;
+  width: 270px;
   height: 50px;
-  left: 120px;
-  top: 745px;
+  left: 475px;
+  top: 50px;
 }
 
 
@@ -401,3 +401,7 @@ dp-day-calendar .dp-day-calendar-container {
 .complex-element-no-child {
   text-align: left;
 }
+.mat-sidenav-content{
+  height: 800px;
+}
+

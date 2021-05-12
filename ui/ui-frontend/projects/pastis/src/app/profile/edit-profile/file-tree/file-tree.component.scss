@@ -8,16 +8,16 @@
     /*max-width: 1024px;*/
     margin: 5px;
   }
-  
+
 .file-tree{
   width: 100%;
-  height: 94%; 
+  height: 94%;
   margin-top: 10px;
   position: absolute;
-  white-space: nowrap; 
+  white-space: nowrap;
   left: 0px;
   top: 45px;
-}  
+}
 
 
 .grid-tile-main {
@@ -27,7 +27,7 @@
 
 .grid-title {
  position:absolute;
- left: 10px; 
+ left: 10px;
  top: 10px;
  font-size: 95%;
 }
@@ -52,7 +52,7 @@
  }
  .buttons-container {
   position:absolute;
-  left: 10px; 
+  left: 10px;
   top: 60px;
  }
  .buttons-divider{
@@ -104,7 +104,7 @@
   max-width: 400px !important;
   max-height: 3px !important;
  // margin: 0px 0px 0px 0px !important;
-  
+
   opacity: 0.3 !important;
   border: 1px solid #979797 !important;
 }
@@ -133,8 +133,9 @@
 .mat-list-item{
   display:block !important;
   text-align-last:left;
+  background-color: #FFFF;
+  margin-top: 5px;
 }
-
 
 .list-item-no-children:hover{
   background: rgba(92, 186, 169, 0.15);
@@ -147,8 +148,8 @@
 
 
 .pastis-tree-ul {
+  margin-top: 5px;
   padding-left: 0px;
-  margin: 0px;
 }
 
 .pastis-add-ua-text {
@@ -218,4 +219,7 @@
 
 .pastis-ico-add-ua-grey {
   @extend .pastis-ico-svg;
+}
+.pastis-tree{
+  background-color: #F6F3FB;
 }
