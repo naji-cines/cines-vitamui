@@ -5,7 +5,8 @@
 	<packaging>jar</packaging>
 	<url>http://maven.apache.org</url>
 	<artifactId>ui-pastis</artifactId>
-	<name>UI Pastis</name>
+	<name>VITAMUI UI Pastis</name>
+        <version>4.4.0-SNAPSHOT</version>
 
     <parent>
         <groupId>fr.gouv.vitamui</groupId>
