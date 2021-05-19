@@ -139,7 +139,11 @@
               <mat-divider *ngIf="hasAttributes(element.nomDuChamp)" style="border-top-color:#E0E0E0;"></mat-divider>
               <button *ngIf="hasAttributes(element.nomDuChamp);" (click)="onEditAttributesClick(element.id)"
                       mat-menu-item>
-                <mat-icon style="color:#757575">alternate_email</mat-icon>
+                <i class="vitamui-icon vitamui-icon-alternate_email_black_24dp" style="margin-right: 16px;
+                   vertical-align: middle;
+                    color:#757575;
+                   font-size: 1.77em;">
+                </i>
                 <span class="pastis-item-menu-text">Attributs de métadonnée</span>
               </button>
               <!-- @Supprimer-->
