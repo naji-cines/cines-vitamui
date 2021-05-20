@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'vitamui-icon';
-  src:  url('fonts/vitamui-icon.eot?9wsokf');
-  src:  url('fonts/vitamui-icon.eot?9wsokf#iefix') format('embedded-opentype'),
-    url('fonts/vitamui-icon.ttf?9wsokf') format('truetype'),
-    url('fonts/vitamui-icon.woff?9wsokf') format('woff'),
-    url('fonts/vitamui-icon.svg?9wsokf#vitamui-icon') format('svg');
+  src:  url('fonts/vitamui-icon.eot?7dbwor');
+  src:  url('fonts/vitamui-icon.eot?7dbwor#iefix') format('embedded-opentype'),
+    url('fonts/vitamui-icon.ttf?7dbwor') format('truetype'),
+    url('fonts/vitamui-icon.woff?7dbwor') format('woff'),
+    url('fonts/vitamui-icon.svg?7dbwor#vitamui-icon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,9 +25,16 @@ i.vitamui-icon {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.vitamui-icon-ic24-PUA:before {
+  content: "\ea90";
+  color: #757575;
+}
+.vitamui-icon-ic24-journal:before {
+  content: "\ea91";
+  color: #757575;
+}
 .vitamui-icon-alternate_email_black_24dp:before {
   content: "\ea8f";
-  color:#757575;
 }
 .vitamui-icon-complex-element-1-1 .path1:before {
   content: "\e929";
