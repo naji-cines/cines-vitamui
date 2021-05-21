@@ -4,10 +4,12 @@ $colors: (
 
   /* Primary */
   primary-50: #F7EBFA,
-  primary-300:#C672D9,
+  primary-100: #e6c3ef,
+  primary-300: #C672D9,
   primary-400 : #B54ACE,
   primary-500 : #702382,
-  
+  primary-700: #571B64,
+
 
   /* Secondary */
   secondary-disabled:#BDD9EC,
@@ -16,7 +18,7 @@ $colors: (
   secondary-300: #6DA2DF,
   secondary-400: #4388D6,
   secondary-500: #2563A9,
-  
+
   /*Surface*/
   surface-tabs: #604379,
   surface-snackbar:#604379,
@@ -34,7 +36,7 @@ $colors: (
   /* White */
   white-highlight: #FFFFFF,
   white-disabled:rgba(255, 255, 255, 0.57)
-  
+
 );
 
 $input-colors: (

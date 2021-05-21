@@ -4,6 +4,7 @@
 @import "../../../../assets/css/font";
 @import "../../../../assets/css/buttons";
 @import "../../../../assets/css/input";
+@import '~ui-frontend-common/sass/material/menu';
 
 td {
   padding-right: 6px !important;
@@ -137,7 +138,6 @@ td {
   overflow-y: hidden;
 
 }
-
 .radio-group {
   display: flex;
   flex-direction: column;
@@ -210,7 +210,7 @@ tr:hover .pastis-btn-appear {
 
 .pastis-btn-metadata-options {
   @extend .pastis-btn-rounded-mini-neutral-enabled;
-  border: 1px solid map-get($colors, 'primary-500') !important;
+  border: 1px solid map-get($colors, 'primary-700') !important;
   float: right;
   width: 40px;
   height: 40px;
@@ -219,12 +219,12 @@ tr:hover .pastis-btn-appear {
 
 .pastis-btn-metadata-options-active {
   @extend .pastis-btn-rounded-mini-neutral-enabled;
-  background: map-get($colors, 'white-highlight' );
+  background: map-get($colors, 'primary-100' );
   position: absolute !important;
   margin-left: 5px !important;
   width: 40px;
   height: 40px;
-  border: 1px solid map-get($colors, 'primary-500') !important;
+  border: 1px solid map-get($colors, 'primary-700') !important;
 }
 
 
@@ -403,5 +403,16 @@ dp-day-calendar .dp-day-calendar-container {
 }
 .mat-sidenav-content{
   height: 800px;
+}
+
+.pastis-menu-item-vitam{
+  @extend .vitamui-menu-panel;
+  .mat-menu-item:hover:not([disabled]),
+  .mat-menu-item.cdk-program-focused:not([disabled]),
+  .mat-menu-item.cdk-keyboard-focused:not([disabled]),
+  .mat-menu-item-highlighted:not([disabled]) {
+    color: white;
+    background-color: map-get($colors, 'primary-100' ) !important;
+  }
 }
 
