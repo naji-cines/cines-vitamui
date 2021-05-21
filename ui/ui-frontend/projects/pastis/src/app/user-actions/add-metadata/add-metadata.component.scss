@@ -44,27 +44,32 @@
 .item-text{
     vertical-align: middle;
     padding-left: 4px;
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+    //display: flex;
+    align-items: center;
+    letter-spacing: 0.1px;
 }
 
 
 .selected-items-box {
-    @extend .pastis-font-menu;
     padding: 15px;
-    background-color:#65B2E4;
-    border: 1px solid #65B2E4;
-    box-sizing: border-box;
+    background-color:var(--vitamui-secondary-300);
     color: white;
-    border-radius: 5px;
+    border: 1px solid #9C31B5;
+    box-sizing: border-box;
+    border-radius: 10px;
     vertical-align: middle;
-
     // Positioning
     margin: 0.4125em 0 0 0.4125em;
     display: inline-flex;
     text-align: center;
     text-justify: auto;
     vertical-align: middle;
-    color: #FFFFFF; 
-    max-width: 100%;
+    color: #FFFFFF;
 }
 
 .selected-items-close{
@@ -91,12 +96,22 @@
 
 .ajouter {
     @extend .pastis-font-add-metadata-items;
-    @extend .pastis-secondary-300;
+    @extend .pastis-primary-500;
     float: right;
     margin-right: 33px;
     cursor:pointer;
     text-decoration:underline;
     height: 50px;
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+    /* identical to box height, or 157% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1px;
 }
 
 .ajouter:hover {
@@ -104,9 +119,25 @@
     //text-shadow: 1px 1px 1px #555;
 }
 
-.pastis-ico-complex-element{
+#pastis-ico-complex-element{
     margin-left: -39px;
     margin-right: 10px;
     vertical-align: middle;
     display: inline-flex;
+}
+
+.selected-items-separator{
+  position: static;
+  width: 0px;
+  right: 44px;
+  top: 1px;
+  bottom: 1px;
+  height: 48px;
+  left: 116px;
+  box-sizing: border-box;
+  border: 1px solid #FFFFFF;
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+  margin: 0px 10px;
 }

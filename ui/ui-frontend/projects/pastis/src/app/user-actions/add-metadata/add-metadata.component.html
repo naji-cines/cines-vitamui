@@ -1,7 +1,7 @@
 <div>
     <!-- The input search -->
     <div style="margin-bottom: 20px;">
-        <input [(ngModel)]="filterName" placeholder="Chercher le nom de la métadonnée" class="filter-input-text">
+        <vitamui-common-banner [searchbarPlaceholder]="'Recherche un profil par son intitulé'" (search)="onSearchSubmit($event)" ></vitamui-common-banner>
     </div>
 
     <!-- The selected items -->
@@ -9,13 +9,15 @@
         <div style="display: inline-flex" *ngFor="let item of addedItems;let i =index">
             <div  class="selected-items-box">
                 <span>
-                    <mat-icon *ngIf="isElementComplex(item)" 
-                    svgIcon="complex-element-white2"
-                    style="vertical-align: middle;">
-                    </mat-icon>
+                    <i *ngIf="isElementComplex(item)" class="vitamui-icon vitamui-icon-complex-element-1-1">
+                      <span class="path1"></span><span class="path2"></span>
+                      <span class="path3"></span><span class="path4"></span>
+                      <span class="path5"></span>
+                    </i>
                     <span class="item-text">{{item}}</span>
+                    <span class="selected-items-separator"></span>
                 </span>
-                <span class="selected-items-close" (click)="onRemoveSelectedElement(item)">&times;</span> 
+                <span class="selected-items-close" (click)="onRemoveSelectedElement(item)">&times;</span>
             </div>
         </div>
     </div>
@@ -23,20 +25,22 @@
     <!-- The list of items to be selected-->
        <mat-list  *ngIf="allowedChildren?.length; else noItemsLeftToAdd" >
         <p class="paragraph-metadata-subtitle"
-        [ngStyle]="{'margin-top': atLeastOneIsSelected ? '40px' : '0px'}">Les métadonnées à ajouter</p> 
+        [ngStyle]="{'margin-top': atLeastOneIsSelected ? '40px' : '0px'}">Les métadonnées à ajouter</p>
         <mat-selection-list [disableRipple]="true" [ngModel]="addedItems"
             (ngModelChange)="selectSedaElement($event)" class="list-box">
             <mat-list *ngFor="let elementName of allowedChildrenNames | filterByName:filterName;"
                              class="list-item">
                             <span class="list-box-content">
-                                <mat-icon *ngIf="isElementComplex(elementName)" 
-                                svgIcon="complex-element-white2" 
-                                class="pastis-ico-complex-element">
-                                </mat-icon>
-                                <span 
+                                <i id ="pastis-ico-complex-element" *ngIf="isElementComplex(elementName)" class="vitamui-icon vitamui-icon-complex-element-1-1">
+                                  <span class="path1"></span><span class="path2"></span>
+                                  <span class="path3"></span><span class="path4"></span>
+                                  <span class="path5"></span>
+                                </i>
+
+                                <span
                                 tooltip={{getDefinition(elementName)}}
-                                 placement="right" 
-                                 show-delay="0" 
+                                 placement="right"
+                                 show-delay="0"
                                  tooltip-class="pastis-tooltip-class">{{elementName}}</span>
                             </span>
                              <span class="ajouter" (click)="onAddSelectedElement(elementName)">Ajouter</span>

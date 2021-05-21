@@ -5,6 +5,10 @@
     border-radius: 20px;
     background-color: white;
 }
+.pastis-dialog-config-title{
+  bottom: 10px;
+  position: relative;
+}
 .pastis-dialog-confirm-divider {
     position: relative;
     max-width: 90%;
@@ -21,8 +25,19 @@
     /* Positioning */
     position: relative;
     margin-left: 5%;
-    margin-right: 40px; 
+    margin-right: 40px;
     margin-top: 10px;
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+    /* or 140% */
+
+    display: flex;
+    align-items: center;
+    color: var(--vitamui-grey-900);
+
 }
 
 .pastis-dialog-subtitle {
@@ -30,8 +45,14 @@
     /* Positioning */
     position: relative;
     margin-left: 5%;
-    margin-right: 40px; 
+    margin-right: 40px;
     margin-bottom: 0px;
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--vitamui-grey-600);
 }
 
 .pastis-dialog-content{
@@ -51,6 +72,7 @@
     padding-right: 30px;
     min-width: 92px;
     height: 50px;
+    background-color: var(--vitamui-primary);
     @extend .pastis-btn-primary-enabled;
 }
 .pastis-btn-oui-dialog-confirm:hover:not([disabled]){
@@ -79,12 +101,14 @@
 
 .pastis-close-popup{
     text-align: right;
-    margin-top: -13px; 
-    margin-right: -3%; 
+    margin-top: -13px;
+    margin-right: -3%;
     float:right;
 }
 
 .barre-et-croix{
-    max-width: 95%;
-    cursor: pointer;
+    position: relative;
+    left: 715px;
+    top: 31px;
+    width: 50px;
 }
