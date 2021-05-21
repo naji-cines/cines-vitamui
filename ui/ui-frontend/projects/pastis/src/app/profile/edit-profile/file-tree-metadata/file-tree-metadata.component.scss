@@ -412,7 +412,7 @@ dp-day-calendar .dp-day-calendar-container {
   .mat-menu-item.cdk-keyboard-focused:not([disabled]),
   .mat-menu-item-highlighted:not([disabled]) {
     color: white;
-    background-color: map-get($colors, 'primary-100' ) !important;
+    background-color: map-get($colors, 'ligthly-purple' ) !important;
   }
 }
 
