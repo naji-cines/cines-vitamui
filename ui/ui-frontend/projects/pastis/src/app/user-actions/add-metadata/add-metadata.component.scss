@@ -34,7 +34,8 @@
     border-bottom:  1px solid #ECECEC;
     //max-height: 50px;
     padding-top: 0px;
-
+    background-color: #FFFFFF;
+    border-radius: 5px;
 }
 
 .list-item:last-child{
@@ -112,6 +113,7 @@
     display: flex;
     align-items: center;
     letter-spacing: 0.1px;
+    text-transform: uppercase;
 }
 
 .ajouter:hover {

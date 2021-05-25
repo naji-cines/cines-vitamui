@@ -23,9 +23,11 @@
     </div>
 
     <!-- The list of items to be selected-->
-       <mat-list  *ngIf="allowedChildren?.length; else noItemsLeftToAdd" >
-        <p class="paragraph-metadata-subtitle"
-        [ngStyle]="{'margin-top': atLeastOneIsSelected ? '40px' : '0px'}">Les métadonnées à ajouter</p>
+       <mat-list  *ngIf="allowedChildren?.length; else noItemsLeftToAdd" class="list-item">
+        <span class="list-box-content">
+          <span class="paragraph-metadata-subtitle"
+          [ngStyle]="{'margin-top': atLeastOneIsSelected ? '40px' : '0px'}">Les métadonnées à ajouter</span>
+        </span>
         <mat-selection-list [disableRipple]="true" [ngModel]="addedItems"
             (ngModelChange)="selectSedaElement($event)" class="list-box">
             <mat-list *ngFor="let elementName of allowedChildrenNames | filterByName:filterName;"
@@ -38,6 +40,7 @@
                                 </i>
 
                                 <span
+                                class="text normal"
                                 tooltip={{getDefinition(elementName)}}
                                  placement="right"
                                  show-delay="0"

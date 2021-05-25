@@ -110,11 +110,10 @@
 }
 
 .pastis-chevron-icon{
-  @extend .pastis-surface-snackbar;
   text-align-last:left;
 }
-.pastis-chevron-icon svg {
-  @extend .pastis-surface-snackbar;
+.pastis-chevron-icon:focus{
+  color: var(--vitamui-primary);
 }
 
 .pastis-divider{

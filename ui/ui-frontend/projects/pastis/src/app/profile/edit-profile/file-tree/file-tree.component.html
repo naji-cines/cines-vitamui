@@ -34,7 +34,7 @@
                     && isPartOfCollection(node) && shouldBeOnTab(node) && !isAttribute(node)"
               class="pastis-tree-node-name" (click)="updateMedataTable(node)"
               [ngStyle]="{'margin-left': calculateNodePosition(node)  + 'px'}">
-          <span>{{onResolveName(node)}}</span>
+          <span class="text text-medium">{{onResolveName(node)}}</span>
           <mat-divider class="pastis-divider"></mat-divider>
         </span>
 
@@ -50,7 +50,7 @@
                   <mat-icon>{{nestedTreeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}</mat-icon>
               </button>
               <span class="pastis-tree-node-name">
-                  <span>{{onResolveName(node)}}</span>
+                  <span class="text text-medium">{{onResolveName(node)}}</span>
                 <!--<span *ngIf="node.name === 'ArchiveUnit'"
                               style="float: right;"
                               tooltip="Ajouter une UA"
