@@ -90,7 +90,7 @@
               </ng-container>
               <ng-container *ngSwitchCase="'enumeration'">
                 <mat-select placeholder="Choisissez une valeur" [ngModel]="element.valeurFixe"
-                            (ngModelChange)="setNodeValue(element,$event)" class="select-border">
+                            (ngModelChange)=setNodeValue(element,$event)" class="select-border">
                   <mat-option [value]=""></mat-option>
                   <mat-option *ngFor="let val of element.enumeration" [value]="val">{{val}}</mat-option>
                 </mat-select>
