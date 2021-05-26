@@ -180,45 +180,24 @@
   padding: 0%;
   vertical-align: text-bottom;
 }
-
-.pastis-btn-rounded-ua:hover {
-  @extend .pastis-btn-rounded-ua;
-  @extend .pastis-btn-rounded-standard-secondary-hover;
+.pastis-btn-add-ua{
+  background-color: transparent;
+  border: none;
+  margin-right: 20px;
+}
+.pastis-btn-add-ua-text{
+  color: var(--vitamui-primary);
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  align-items: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-left: 7px;
 }
 
-.pastis-btn-rounded-ua:active {
-  @extend .pastis-btn-rounded-ua;
-  @extend .pastis-btn-rounded-standard-secondary-focus;
-}
-
-.pastis-ico-add-ua {
-  @extend .pastis-ico-svg;
-
-}
-
-
-.pastis-btn-rounded-ua-grey {
-  @extend .pastis-btn-rounded-standard-secondary-enabled;
-  width: 20px;
-  height: 20px;
-  padding: 0%;
-  vertical-align: text-bottom;
-  background: #A3A3A3;
-}
-
-.pastis-btn-rounded-ua-grey:hover {
-  @extend .pastis-btn-rounded-ua-grey;
-  @extend .pastis-btn-rounded-standard-secondary-hover;
-}
-
-.pastis-btn-rounded-ua-grey:active {
-  @extend .pastis-btn-rounded-ua-grey;
-  @extend .pastis-btn-rounded-standard-secondary-focus;
-}
-
-.pastis-ico-add-ua-grey {
-  @extend .pastis-ico-svg;
-}
 .pastis-tree{
   background-color: #F6F3FB;
 }

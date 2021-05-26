@@ -13,21 +13,36 @@
 }
 
 .paragraph-metadata-subtitle{
-    margin-bottom: 26px;
-    margin-left: 0.4125em;
-    @extend .pastis-input-text;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 22px;
+  align-items: center;
+  letter-spacing: 0.1px;
+  color: var(--vitamui-grey-900);
 }
 
 
 .list-box{
     background: #FFFFFF;
-    border: 1px solid #DFDFDF;
     box-sizing: border-box;
     border-radius: 5px;
     padding-top: 0px;
     max-height: 256px;
     overflow: auto;
     outline: none;
+}
+mat-divider{
+  height: 5px;
+  background-color: #F6F3FB;
+}
+.list-box-head{
+  background: #FFFFFF;
+  border: 1px solid #DFDFDF;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none;
 }
 
 .list-item{
@@ -94,6 +109,11 @@
     margin-left: 59px;
     color: #808080;
 }
+.list-box-content-title{
+  @extend .pastis-font-add-metadata-items;
+  margin-left: 20px;
+  color: var(--vitamui-grey-900);
+}
 
 .ajouter {
     @extend .pastis-font-add-metadata-items;
@@ -123,7 +143,7 @@
 
 #pastis-ico-complex-element{
     margin-left: -39px;
-    margin-right: 10px;
+    margin-right: 22px;
     vertical-align: middle;
     display: inline-flex;
 }

@@ -5,7 +5,7 @@
     </div>
 
     <!-- The selected items -->
-    <div *ngIf="addedItems?.length > 0" style="text-align:justify">
+    <div *ngIf="addedItems?.length > 0" style="text-align:justify; bottom: 20px;">
         <div style="display: inline-flex" *ngFor="let item of addedItems;let i =index">
             <div  class="selected-items-box">
                 <span>
@@ -23,11 +23,14 @@
     </div>
 
     <!-- The list of items to be selected-->
-       <mat-list  *ngIf="allowedChildren?.length; else noItemsLeftToAdd" class="list-item">
-        <span class="list-box-content">
+       <mat-list  *ngIf="allowedChildren?.length; else noItemsLeftToAdd" class="list-box-head">
+        <span class="list-box-content-title">
           <span class="paragraph-metadata-subtitle"
           [ngStyle]="{'margin-top': atLeastOneIsSelected ? '40px' : '0px'}">Les métadonnées à ajouter</span>
+          <i class="vitamui-icon vitamui-icon-chevron-down" style="margin-left: 20px; font-weight: bold;"></i>
         </span>
+        <i class="vita"></i>
+        <mat-divider class="pastis-popup-separator"></mat-divider>
         <mat-selection-list [disableRipple]="true" [ngModel]="addedItems"
             (ngModelChange)="selectSedaElement($event)" class="list-box">
             <mat-list *ngFor="let elementName of allowedChildrenNames | filterByName:filterName;"
@@ -47,6 +50,7 @@
                                  tooltip-class="pastis-tooltip-class">{{elementName}}</span>
                             </span>
                              <span class="ajouter" (click)="onAddSelectedElement(elementName)">Ajouter</span>
+                             <mat-divider class="pastis-popup-separator"></mat-divider>
 
             </mat-list>
         </mat-selection-list>

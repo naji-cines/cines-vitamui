@@ -50,16 +50,17 @@
                   <mat-icon>{{nestedTreeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}</mat-icon>
               </button>
               <span class="pastis-tree-node-name">
-                  <span class="text text-medium">{{onResolveName(node)}}</span>
-                <!--<span *ngIf="node.name === 'ArchiveUnit'"
+                <span class="text text-medium">{{onResolveName(node)}}</span>
+                <span *ngIf="node.name === 'ArchiveUnit'"
                               style="float: right;"
                               tooltip="Ajouter une UA"
-                              tooltip-class="pastis-tooltip-class">-->
-                <!--Button plus-->
-                <!-- <button class="pastis-btn-rounded-ua-grey pastis-btn-add-ua">
-                  <mat-icon class="pastis-ico-plus" (click)= "addArchiveUnit(node)">add</mat-icon>
-              </button> -->
-                <!--</span>-->
+                              tooltip-class="pastis-tooltip-class">
+                  <!--Button plus-->
+                  <button class="pastis-btn-add-ua" (click)= "addArchiveUnit(node)">
+                    <i class="vitamui-icon vitamui-icon-add" style="color: var(--vitamui-primary);"></i>
+                    <span class="pastis-btn-add-ua-text">Ajouter une ua</span>
+                  </button>
+                </span>
               </span>
               <mat-divider class="pastis-divider"></mat-divider>
         </span>
