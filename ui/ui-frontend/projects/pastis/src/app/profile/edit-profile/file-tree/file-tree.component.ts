@@ -88,6 +88,7 @@ export class FileTreeComponent {
   dataChange = new BehaviorSubject<FileNode>(null);
   rulesChange: string[][] = [];
   rootMetadataName: string;
+  selectedItemList: FileNode;
 
 
 
@@ -328,6 +329,8 @@ export class FileTreeComponent {
   }
 
   updateMedataTable(node: FileNode) {
+    console.error(this.selectedItemList);
+    this.selectedItemList = node;
     let rulesFromService = this.fileService.tabChildrenRulesChange.getValue()
     let tabChildrenToInclude = rulesFromService[0];
     let tabChildrenToExclude = rulesFromService[1];
@@ -551,6 +554,14 @@ export class FileTreeComponent {
       this.renderChanges(node);
       this.loggingService.showSuccess('La métadonnée ArchiveUnit a été ajoutée');
     }
+  }
+  selectedItem(node: FileNode){
+    if(this.selectedItemList && node){
+      if(this.selectedItemList.id == node.id){
+        return "var(--vitamui-primary)";
+      }
+    }
+    return "none";
   }
 
 }
