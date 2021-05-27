@@ -5,6 +5,7 @@
 @import "../../../../assets/css/buttons";
 @import "../../../../assets/css/input";
 @import '~ui-frontend-common/sass/material/menu';
+@import '~ui-frontend-common/sass/icons/vitamui-icons';
 
 td {
   padding-right: 6px !important;
@@ -38,9 +39,10 @@ td {
   @extend .pastis-dropdown-text-button1-enabled;
 }
 
+
 /////////////################ Select trigger - Text + arrow
 .mat-select-arrow {
-  background: url(../../../../assets/svg/icons/drop-box-arrow.svg) no-repeat 100% 50%;
+  background: url(../../../../assets/svg/icons/drop-box-arrow-vitam.svg) no-repeat 100% 50% ;
   background-size: 24px 24px;
   border: none !important;
   -moz-appearance: none;
@@ -57,6 +59,13 @@ td {
   vertical-align: middle;
   margin-left: 25px;
   max-width: 200px;
+}
+
+.mat-select-placeholder {
+  //styleName: Text/Text-medium;
+  @extend .text-text-medium;
+  color:#757575;
+
 }
 
 
@@ -118,8 +127,27 @@ td {
 .value-text-area {
   padding: 0px;
   width: 80%;
-  @extend .pastis-text-area;
+  color:#212121;
   @extend .pastis-table-input-border;
+  display: flex;
+  align-items: center;
+  resize: none;
+  outline: none;
+  //styleName: Text/Text-medium;
+  @extend .text-text-medium;
+}
+
+.value-label{
+  //styleName: Caption/Caption-bold;
+  font-family: Mulish;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: -0.20000000298023224px;
+  text-align: left;
+  color:#9C31B5;
+
 }
 
 .select-border{
@@ -128,15 +156,15 @@ td {
 
 .comment-text-area {
   @extend .value-text-area;
-  @extend .pastis-textarea-comment;
+ //@extend .pastis-textarea-comment;
   padding: 0px;
   float: left;
   text-align: left;
   text-indent: 10px;
-  overflow: hidden;
+  text-overflow: ellipsis;
+ // overflow: hidden;
   width: 80%;
-  overflow-y: hidden;
-
+  //overflow-y: hidden;
 }
 .radio-group {
   display: flex;
