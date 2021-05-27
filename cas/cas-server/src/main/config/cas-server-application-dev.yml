@@ -9,10 +9,10 @@ spring:
 
 server:
   ssl:
-    key-store: ../../dev-deployment/environments/keystores/server/localhost/keystore_cas-server.jks
+    key-store: dev-deployment/environments/keystores/server/sandbox23-adm.cines.fr/keystore_cas-server.jks
     key-store-password: changeme
     key-password: changeme
-  host: dev.vitamui.com
+  host: sandbox23-adm.cines.fr
   port: 8080
   servlet:
     context-path: /cas
@@ -34,11 +34,11 @@ iam-client:
   secure: true
   ssl-configuration:
     keystore:
-      key-path: ../../dev-deployment/environments/keystores/server/localhost/keystore_cas-server.jks
+      key-path: dev-deployment/environments/keystores/server/sandbox23-adm.cines.fr/keystore_cas-server.jks
       key-password: changeme
       type: JKS
     truststore:
-      key-path: ../../dev-deployment/environments/keystores/server/truststore_server.jks
+      key-path: dev-deployment/environments/keystores/server/truststore_server.jks
       key-password: changeme
     hostname-verification: false
 
@@ -55,7 +55,7 @@ cas.tgc.crypto.enabled: false
 cas.webflow.crypto.enabled: true
 cas.authn.pm.reset.crypto.enabled: true
 
-cas.server.prefix: https://dev.vitamui.com:8080/cas
+cas.server.prefix: https://sandbox23-adm.cines.fr:8080/cas
 login.url: ${cas.server.prefix}/login
 
 cas.serviceRegistry.mongo.clientUri: mongodb://mongod_dbuser_cas:mongod_dbpwd_cas@localhost:27018/cas
@@ -129,7 +129,7 @@ cas.smsProvider.twilio.accountId: changeme
 cas.smsProvider.twilio.token: changeme
 
 
-vitamui.portal.url: https://dev.vitamui.com:4200/
+vitamui.portal.url: https://sandbox23-adm.cines.fr:4200/
 
 
 token.api.cas: tokcas_ie6UZsEcHIWrfv2x
@@ -170,7 +170,7 @@ opentracing:
 
 debug: true
 logging:
-  config: src/main/config/logback-dev.xml
+  config: cas/cas-server/src/main/config/logback-dev.xml
   level:
     org.springframework.amqp: 'OFF'
     org.springframework.context.annotation: 'OFF'

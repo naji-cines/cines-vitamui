@@ -20,7 +20,7 @@ server-identity:
   identityServerId: 1
 
 server:
-  host:
+  host: localhost
   port: 7083
 
 management:
@@ -33,15 +33,15 @@ security:
   port: 8084
 
 cas-client:
-  server-host: dev.vitamui.com
+  server-host: sandbox23-adm.cines.fr
   server-port: 8080
   secure: true
   ssl-configuration:
     truststore:
-      key-path: ../../../dev-deployment/environments/keystores/server/localhost/keystore_iam-internal.jks
+      key-path: dev-deployment/environments/keystores/server/sandbox23-adm.cines.fr/keystore_iam-internal.jks
       key-password: changeme
     keystore:
-      key-path:  ../../../dev-deployment/environments/keystores/server/localhost/keystore_iam-internal.jks
+      key-path:  dev-deployment/environments/keystores/server/sandbox23-adm.cines.fr/keystore_iam-internal.jks
       key-password: changeme
       type: JKS
     hostname-verification: false
@@ -49,7 +49,7 @@ cas-client:
 cas.reset.password.url: /cas/extras/resetPassword?username={username}&firstname={firstname}&lastname={lastname}&language={language}&ttl=1day
 
 login:
-  url: http://dev.vitamui.com:8080/cas/login
+  url: http://sandbox23-adm.cines.fr:8080/cas/login
 
 login.attempts.maximum.failures: 5
 login.attempts.time.interval: 20
@@ -62,7 +62,7 @@ logbook:
 
 vitam.tenant.init.mandatory: true
 
-customer.init.config.file: src/main/config/customer-init.yml
+customer.init.config.file: api/api-iam/iam-internal/src/main/config/customer-init.yml
 
 # Jaeger
 opentracing:
