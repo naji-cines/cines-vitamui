@@ -50,7 +50,8 @@
                   <mat-icon>{{nestedTreeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}</mat-icon>
               </button>
               <span class="pastis-tree-node-name">
-                <span class="text text-medium">{{onResolveName(node)}}</span>
+                <span class="text text-medium"
+                [ngStyle]="{'color': selectedItem(node) }">{{onResolveName(node)}}</span>
                 <span *ngIf="node.name === 'ArchiveUnit'"
                               style="float: right;"
                               tooltip="Ajouter une UA"
