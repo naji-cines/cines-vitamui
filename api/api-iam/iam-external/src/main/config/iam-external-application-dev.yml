@@ -20,10 +20,10 @@ server-identity:
   identityServerId: 1
 
 server:
-  host: sandbox23.cines.fr
+  host: localhost
   port: 8083
   ssl:
-    key-store: dev-deployment/environments/keystores/server/sandbox23.cines.fr/keystore_iam-internal.jks
+    key-store: dev-deployment/environments/keystores/server/sandbox23-adm.cines.fr/keystore_iam-internal.jks
     key-store-password: changeme
     key-password: changeme
     trust-store: dev-deployment/environments/keystores/server/truststore_server.jks
@@ -38,11 +38,11 @@ management:
 
 iam-external:
   security-client:
-    server-host: sandbox23.cines.fr
+    server-host: localhost
     server-port: 8084
     secure: false
   iam-internal-client:
-    server-host: sandbox23.cines.fr
+    server-host: localhost
     server-port: 7083
     secure: false
 

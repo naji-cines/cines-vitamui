@@ -72,7 +72,7 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "identity:build",
-            "host": "sandbox23.cines.fr",
+            "host": "sandbox23-adm.cines.fr",
             "port": 4201
           },
           "configurations": {
@@ -196,7 +196,7 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "portal:build",
-            "host": "sandbox23.cines.fr",
+            "host": "sandbox23-adm.cines.fr",
             "port": 4200
           },
           "configurations": {
@@ -401,7 +401,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "referential:build",
-            "host": "sandbox23.cines.fr",
+            "host": "sandbox23-adm.cines.fr",
             "port": 4202
           },
           "configurations": {
@@ -571,7 +571,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "starter-kit:build",
-            "host": "sandbox23.cines.fr",
+            "host": "sandbox23-adm.cines.fr",
             "port": 4203
           },
           "configurations": {
@@ -685,7 +685,7 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "ingest:build",
-            "host": "sandbox23.cines.fr",
+            "host": "sandbox23-adm.cines.fr",
             "port": 4208
           },
           "configurations": {
@@ -808,7 +808,7 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "archive-search:build",
-            "host": "sandbox23.cines.fr",
+            "host": "sandbox23-adm.cines.fr",
             "port": 4209
           },
           "configurations": {
@@ -929,7 +929,7 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "pastis:build",
-            "host": "sandbox23.cines.fr",
+            "host": "sandbox23-adm.cines.fr",
             "port": 4251
           },
           "configurations": {

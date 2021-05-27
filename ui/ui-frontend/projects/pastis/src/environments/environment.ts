@@ -43,7 +43,7 @@ import{IEnvironment} from './IEnvironment'
 
 export const environment: IEnvironment= {
   production: false,
-  apiServerUrl: "https://sandbox78-adm.cines.fr:8051"
+  apiServerUrl: "https://sandbox23-adm.cines.fr:8051"
 };
 
 /*

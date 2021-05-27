@@ -1,6 +1,6 @@
 docker rmi $(docker images --filter label=name=dependencies --format {{.ID}}) || echo 'image not found'
 docker rmi $(docker images --filter label=name=build-services --format {{.ID}}) || echo 'image not found'
-docker rmi $(docker images --filter label=name=build-front --format {{.ID}}) || echo 'image not found'
+#docker rmi $(docker images --filter label=name=build-front --format {{.ID}}) || echo 'image not found'
 docker tag $(docker images --filter label=name=security-internal --format {{.ID}}) cines/vitamui-security-internal || echo 'image not found'
 docker tag $(docker images --filter label=name=iam-internal --format {{.ID}}) cines/vitamui-iam-internal || echo 'image not found'
 docker tag $(docker images --filter label=name=iam-external --format {{.ID}}) cines/vitamui-iam-external || echo 'image not found'

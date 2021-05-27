@@ -9,7 +9,7 @@ spring:
         register: false
   data:
     mongodb:
-      uri: mongodb://mongod_dbuser_security:mongod_dbpwd_security@vitamui-mongo:27018/security?connectTimeoutMS=2000
+      uri: mongodb://mongod_dbuser_security:mongod_dbpwd_security@localhost:27018/security?connectTimeoutMS=2000
 
 server-identity:
   identityName: vitamui-dev

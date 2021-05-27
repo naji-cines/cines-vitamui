@@ -38,6 +38,6 @@ knowledge of the CeCILL-C license and that you accept its terms.
 
 export const environment = {
   production: true,
-  apiServerUrl: "https://sandbox23.cines.fr:8051",
+  apiServerUrl: "https://sandbox23-adm.cines.fr:8051",
 };
 

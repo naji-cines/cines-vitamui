@@ -3,7 +3,7 @@
   "version": "2.1.0",
   "main": "src/index.ts",
   "pki": {
-    "path": "../../dev-deployment/environments/certs/server/hosts/localhost",
+    "path": "dev-deployment/environments/certs/server/hosts/localhost",
     "asset": "reverse"
   },
   "scripts": {
