@@ -96,7 +96,7 @@
 
 .pastis-col{
   text-align: left;
-  
+
 }
 
 .pastis-col:first-child {
@@ -111,9 +111,16 @@
 
 .pastis-metadata-table-col-large {
   @extend .pastis-col;
-  width: 200px;
-  height: 60px;
-  
+  width: 203px;
+  height: 50px;
+
+}
+
+.pastis-metadata-table-col-medium {
+  @extend .pastis-col;
+  width: 140px;
+  height: 50px;
+
 }
 
 
@@ -121,7 +128,7 @@
 .pastis-metadata-table-col-small {
   @extend .pastis-col;
   width: 120px;
-  height: 60px;
+  height: 50px;
 
 }
 
@@ -136,7 +143,7 @@
 }
 
 .pastis-ico-arrow-right{
-    
+
   font-size: 14px;
   line-height: 22px;
   margin-left: 10px;
@@ -166,7 +173,7 @@
 ::-webkit-scrollbar-track {
   background: #E6E6E6;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #F7F8FB;
@@ -176,7 +183,7 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #747272; ; 
+  background: #747272; ;
 }
 
 /*For non webkit browsers, such as Firefox/*
@@ -359,7 +366,7 @@
   box-shadow: 0px 1px 4px rgba(33, 33, 33, 0.2), 0px 2px 8px rgba(33, 33, 33, 0.05);
   cursor: pointer;
 }
- 
+
 
  .pastis-panel-shadow-primary-500 {
   box-shadow: 0px 1px 4px rgba(112, 35, 130, 0.4), 0px 2px 8px rgba(112, 35, 130, 0.2);

@@ -82,7 +82,7 @@
         <!-- Value Column -->
         <ng-container matColumnDef="valeurFixe">
           <th mat-header-cell *matHeaderCellDef class="pastis-font-table-header pastis-col">Valeur fixe</th>
-          <td mat-cell *matCellDef="let element;index as i" class="pastis-metadata-table-col-large">
+          <td mat-cell *matCellDef="let element;index as i" class="pastis-metadata-table-col-medium">
             <ng-container [ngSwitch]="getMetadataInputType(element)">
               <ng-container *ngSwitchCase="'date'">
                 <input [ngModel]="element.valeurFixe" theme="dp-material" class="value-text-area pastis-table-content"
@@ -127,7 +127,6 @@
                       class="comment-text-area ">
             </textarea>
 
-
             <!--Menu options-->
             <mat-menu #menu="matMenu" [overlapTrigger]="false" class="pastis-menu-item-vitam" xPosition="before"
                       yPosition="below">
@@ -155,19 +154,21 @@
                 <span class="text normal">Supprimer</span>
               </button>
             </mat-menu>
-
-            <button id="menuBtn" *ngIf="isRowHovered(element.id)" mat-icon-button [matMenuTriggerFor]="menu"
-                    (click)="onButtonClicked(element.id,$event)" disableRipple="true" (menuOpened)="rowIndex = i"
-                    (menuClosed)="rowIndex = 100"
-                    [ngClass]="{'pastis-btn-metadata-options-active': isButtonClicked(element.id,matDataSource.data[rowIndex]),
+            <div>
+              <button id="menuBtn" *ngIf="isRowHovered(element.id)" mat-icon-button [matMenuTriggerFor]="menu"
+                      (click)="onButtonClicked(element.id,$event)" disableRipple="true" (menuOpened)="rowIndex = i"
+                      (menuClosed)="rowIndex = 100"
+                      [ngClass]="{'pastis-btn-metadata-options-active': isButtonClicked(element.id,matDataSource.data[rowIndex]),
                               'pastis-btn-metadata-options': !isButtonClicked(element.id,matDataSource.data[rowIndex]) }">
-              <mat-icon
-                [ngClass]="{'pastis-ico-menu-active': isButtonClicked(element.id,matDataSource.data[rowIndex]),
+                <mat-icon
+                  [ngClass]="{'pastis-ico-menu-active': isButtonClicked(element.id,matDataSource.data[rowIndex]),
                                 'pastis-ico-menu-inactive': !isButtonClicked(element.id,matDataSource.data[rowIndex])}">
-                {{isButtonClicked(element.id, matDataSource.data[rowIndex]) ? 'close' : 'more_horiz'}}
-              </mat-icon>
-            </button>
+                  {{isButtonClicked(element.id, matDataSource.data[rowIndex]) ? 'close' : 'more_horiz'}}
+                </mat-icon>
+              </button>
+            </div>
           </td>
+
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns;sticky: true" class="pastis-table-row-header"></tr>
