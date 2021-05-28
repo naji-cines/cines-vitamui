@@ -36,6 +36,8 @@ td {
 // Inital content text
 .mat-select-value {
   vertical-align: middle;
+  color: map-get($colors, 'grey-600');
+  @extend .text-text-normal;
   @extend .pastis-dropdown-text-button1-enabled;
 }
 
