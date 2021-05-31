@@ -10,11 +10,11 @@ spring:
         register: false
 
 server:
-  host: dev.vitamui.com
+  host: sandbox23-adm.cines.fr
   port: 9000
   scheme: https
   ssl:
-    key-store: ../../dev-deployment/environments/keystores/server/localhost/keystore_ui-portal.jks
+    key-store: dev-deployment/environments/keystores/server/sandbox23-adm.cines.fr/keystore_ui-portal.jks
     key-store-password: changeme
     key-password: changeme
   compression:
@@ -43,24 +43,24 @@ ui-portal:
     vitamui-tertiary: "#C22A40"
     vitamui-header-footer: "#ffffff"
     vitamui-background: "#F5F7FC"
-  assets: src/main/resources/assets
+  assets: ui/ui-portal/src/main/resources/assets
   iam-external-client:
-    server-host: localhost
+    server-host: sandbox23-adm.cines.fr
     server-port: 8083
     secure: true
     ssl-configuration:
       keystore:
-        key-path: ../../dev-deployment/environments/keystores/server/localhost/keystore_ui-portal.jks
+        key-path: dev-deployment/environments/keystores/server/sandbox23-adm.cines.fr/keystore_ui-portal.jks
         key-password: changeme
         type: JKS
       truststore:
-        key-path: ../../dev-deployment/environments/keystores/server/truststore_server.jks
+        key-path: dev-deployment/environments/keystores/server/truststore_server.jks
         key-password: changeme
       hostname-verification: false
   base-url:
-    portal: "https://dev.vitamui.com:4200"
-    admin-identity: "https://dev.vitamui.com:4201/identity"
-    identity: "https://dev.vitamui.com:4201/identity"
+    portal: "https://sandbox23-adm.cines.fr:4200"
+    admin-identity: "https://sandbox23-adm.cines.fr:4201/identity"
+    identity: "https://sandbox23-adm.cines.fr:4201/identity"
   customer:
     technical-referent-email: contact@programmevitam.fr
     website-url: http://www.programmevitam.fr
@@ -87,15 +87,15 @@ ui-portal:
       order: 5
 
 ui:
-  url: "https://dev.vitamui.com:4200"
-  redirect-url: https://dev.vitamui.com:9000/${ui-prefix}
+  url: "https://sandbox23-adm.cines.fr:4200"
+  redirect-url: https://sandbox23-adm.cines.fr:9000/${ui-prefix}
 
 cas:
-  internal-url: https://dev.vitamui.com:8080/cas
-  external-url: https://dev.vitamui.com:8080/cas
+  internal-url: https://sandbox23-adm.cines.fr:8080/cas
+  external-url: https://sandbox23-adm.cines.fr:8080/cas
   callback-url: ${ui.url}/portal-api/callback
   ssl:
-    trust-store: ../../dev-deployment/environments/keystores/server/truststore_server.jks
+    trust-store: dev-deployment/environments/keystores/server/truststore_server.jks
     trust-store-password: changeme
 
 # Jaeger

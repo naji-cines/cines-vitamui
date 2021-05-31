@@ -1,26 +1,96 @@
 variables:
   GIT_SSL_NO_VERIFY: "true"
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+  MAVEN_OPTS: "-Dmaven.repo.local=./.m2/repository"
 
 stages:
-  - tata
+  - build_vitamui
+#  - start_mongo
+#  - create_network
+  - deploy_services
+  - merge_test
+  - merge_to_master
+
+.machine: &runner-dev
+    tags:
+        - vitamui, docker
 
 .machine: &runner-shell
-    tags: 
+    tags:
         - vitamui, shell
-
-test_tata:
-  stage: tata
+build_project:dev:
+  stage: build_vitamui
   only:
-    - main
+    - feat/test-deploy
   <<: *runner-shell
   script:
-     # Pour éviter de faire des modifications à distance accidentellement, on supprime le lien vers le référentiel d'origine, on détache la branche  de sa remote.
-    - git remote rm origin
-    # La commande "git remote add" est utilisée pour créer un dépôt distant. Le premier argument est le nom du dépôt distant et le deuxième son URL
-    - git remote add origin https://$TOKEN:x-oauth-basic@$LIEN_CIBLE
-    # on se place dans la branche du dépôt distant
-    - git checkout -b $BRANCHE_CIBLE
-    # on met à jour la branche distante (Logiquement, elle devrait toujours être au même niveau que la master local)
-    - git pull origin $BRANCHE_CIBLE
-    # on push sur github sur la branche choisie 
-    - git push --set-upstream origin $BRANCHE_CIBLE
+    - docker build --cache-from none -f Dockerfile .
+  dependencies: []
+
+#start_mongo:dev:
+#  stage: start_mongo
+#  only:
+#    - feat/test-deploy
+#  <<: *runner-shell
+#  script:
+#    - cd tools/docker/mongo/
+#    - sh restart_dev.sh
+
+#create_network:dev:
+#  stage: create_network
+#  only:
+#    - feat/test-deploy
+#  <<: *runner-shell
+#  script:
+#    - docker network create vitamui
+#    - docker network connect vitamui vitamui-mongo
+deploy_services:dev:
+  stage: deploy_services
+  only:
+    - feat/test-deploy
+  <<: *runner-shell
+  script:
+    #- use docker compose to expose services
+    - sh stop-container.sh
+    - sh tag-images.sh
+    - sh run-images.sh
+
+deploy_test:dev:
+  stage: merge_test
+  when: manual
+  only:
+    - feat/test-deploy
+  <<: *runner-shell
+  script:
+    - git clone https://oauth2:$TOKEN_GITLAB@$LIEN_CINES_VITAMUI
+    - cd cines-vitamui
+    - git fetch
+    - git checkout feat/test && git log
+    - git checkout feat/test-deploy && git log
+    - git checkout -b feat/merge-test
+    - export commit=$(git log --grep Dockerization --pretty=format:"%h")
+    - git checkout feat/test-deploy 
+    - git reset --hard HEAD~1
+    - git merge feat/test
+    - git cherry-pick $commit
+    - git push --force
+merge_master:dev:
+  stage: merge_to_master
+  when: manual
+  only:
+    - feat/test-deploy
+  <<: *runner-shell
+  script:
+    - git clone https://oauth2:$TOKEN_GITLAB@$LIEN_CINES_VITAMUI
+    - cd cines-vitamui
+    - git fetch
+    - git checkout feat/test-deploy && git checkout master
+    - git checkout -b merge-master
+    - git merge feat/test-deploy
+    - git log
+    - git reset --hard HEAD~1
+    - git checkout master
+    - git merge merge-master
+    - git push
+
