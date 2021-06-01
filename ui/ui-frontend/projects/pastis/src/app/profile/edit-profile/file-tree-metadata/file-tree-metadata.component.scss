@@ -6,6 +6,8 @@
 @import "../../../../assets/css/input";
 @import '~ui-frontend-common/sass/material/menu';
 @import '~ui-frontend-common/sass/icons/vitamui-icons';
+@import '~ui-frontend-common/sass/variables/colors';
+@import '~ui-frontend-common/sass/editable-field';
 
 td {
   padding-right: 6px !important;
@@ -31,6 +33,7 @@ td {
 .mat-select {
   @extend .dropdown;
   @extend .pastis-dropdown-border-button1-enabled;
+  max-height: 50px;
 }
 
 // Inital content text
@@ -130,7 +133,7 @@ td {
   padding: 0px;
   width: 80%;
   color:#212121;
-  height:40px;
+  height:50px;
   @extend .pastis-table-input-border;
   display: flex;
   align-items: center;
@@ -164,11 +167,43 @@ td {
   float: left;
   text-align: left;
   text-indent: 10px;
-  text-overflow: ellipsis;
- // overflow: hidden;
   width: 80%;
-  //overflow-y: hidden;
 }
+
+
+
+
+.commentaire-pastis {
+ .editable-field {
+   min-height: 50px !important;
+ }
+
+  .display-all {
+    white-space: nowrap !important;
+  }
+
+  .vitamui-input:not(.disabled) {
+    @extend .select-border
+  }
+
+  @extend .editable-field-content;
+  .editable-field-text-content {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 0 !important;
+
+    //styleName: Text/Text-medium;
+    font-family: Mulish, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+}
+
+
 .radio-group {
   display: flex;
   flex-direction: column;
@@ -415,7 +450,7 @@ dp-day-calendar .dp-day-calendar-container {
 
 
 .pastis-metadata-table-col-large textarea {
-  height: 40px;
+  height: 50px;
   text-indent: 10px;
 
 }
